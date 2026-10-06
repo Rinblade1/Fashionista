@@ -2,7 +2,14 @@
   "name": "fashionista",
   "version": "0.1.0",
   "private": true,
-  "scripts": { "dev": "next dev", "build": "next build", "start": "next start" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "npm run test:unit && npm run test:ui",
+    "test:unit": "node --test --experimental-strip-types tests/validation.test.ts",
+    "test:ui": "vitest run"
+  },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0",
     "framer-motion": "^11.18.2",
@@ -11,9 +18,14 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.6.0"
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^30.1.2",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.9"
   }
 }

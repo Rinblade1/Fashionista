@@ -1,0 +1,37 @@
+/* ---------- Phase 2: profile wizard + account ---------- */
+.wiz{width:min(760px,100% - 2*var(--pad));margin-inline:auto;padding-block:clamp(16px,4vw,40px) 64px}
+.wiz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.wiz-count{font-size:.85rem;opacity:.7}
+.wiz-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:clamp(20px,4vw,36px)}
+.wiz-step{display:flex;flex-direction:column;gap:6px;font-size:.78rem}
+.wiz-step .bar{height:3px;border-radius:3px;background:var(--soft);overflow:hidden;transition:background-color .7s var(--ease)}
+.wiz-step .bar span{display:block;height:100%;background:var(--accent);transform-origin:left;transition:background-color .7s var(--ease)}
+.wiz-step small{opacity:.55;letter-spacing:.04em}
+.wiz-step.on small{opacity:1}
+.wiz-card{display:flex;flex-direction:column;gap:22px}
+.opt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.opt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:150px;padding:18px;border:1px solid rgba(0,0,0,.2);border-radius:20px;background:#fff;text-align:left;transition:border-color .3s,box-shadow .3s,background-color .3s}
+.opt strong{font-family:var(--serif);font-size:1.6rem;font-weight:500;line-height:1}
+.opt small{opacity:.7;line-height:1.35}
+.opt.sel{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent);background:var(--tint)}
+.opt-sw{display:flex;gap:6px;margin-bottom:6px}
+.opt-sw i{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.18)}
+.quiz{border:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.quiz legend{font-family:var(--serif);font-size:1.3rem;margin-bottom:8px;float:left;width:100%}
+.quiz legend small{font-family:var(--sans);font-size:.78rem;opacity:.6;margin-left:6px}
+.quiz .chips{clear:both}
+.quiz .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field select{width:100%;min-height:56px;padding:22px 12px 6px;border:1px solid rgba(0,0,0,.25);border-radius:14px;background:#fff;font:inherit;font-size:1rem;appearance:none}
+.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 18%,transparent)}
+.field.sel label{top:6px;font-size:.72rem;color:var(--accent)}
+.field .unit{position:absolute;right:14px;top:18px;font-size:.8rem;opacity:.55;pointer-events:none}
+.field input[aria-invalid="true"]{border-color:#c0392b}
+.ferr{margin-top:4px;font-size:.8rem;color:#9b1c1c}
+.wiz-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tag{padding:4px 12px;border-radius:99px;background:#fff;font-size:.85rem}
+.dl{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:8px}
+.dl dt{font-size:.75rem;opacity:.6}
+.dl dd{font-weight:500}
+@media(max-width:640px){.opt-grid{grid-template-columns:1fr}.opt{min-height:0}.row2{grid-template-columns:1fr}.wiz-actions{flex-direction:column-reverse;align-items:stretch}.wiz-actions .btnrow{flex-direction:column-reverse}.wiz-actions .btn{width:100%}}

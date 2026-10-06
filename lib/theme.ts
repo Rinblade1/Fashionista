@@ -11,4 +11,6 @@ export function getTheme(): Theme {
 export function setTheme(t: Theme) {
   document.documentElement.dataset.theme = t;
   try { localStorage.setItem("theme", t); } catch {}
+  // Lets any mounted theme switch update its highlighted pill.
+  try { window.dispatchEvent(new Event("fs-theme")); } catch {}
 }
