@@ -17,7 +17,7 @@ export default function ClosetItemForm({ busy, onSubmit, onCancel }: Props) {
   const [brand, setBrand] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
-  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [errors, setErrors] = useState<Record<string, string | undefined>>({});
   const [formError, setFormError] = useState<string | null>(null);
 
   useEffect(() => {
