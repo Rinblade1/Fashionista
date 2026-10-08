@@ -13,6 +13,7 @@ const links = [
   ["/outfits", "outfits", "Outfits"],
   ["/planner", "planner", "Planner"],
   ["/stylist", "stylist", "AI stylist"],
+  ["/tryon", "tryon", "3D try-on"],
   ["/account", "account", "Profile"],
 ] as const;
 const ease = [0.22, 1, 0.36, 1] as const;

@@ -1,0 +1,22 @@
+.tr-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(16px,3vw,32px);align-items:start;margin-top:20px}
+.tr-stage-wrap{position:sticky;top:12px;display:flex;flex-direction:column;gap:10px}
+.tr-stage{position:relative;width:100%;aspect-ratio:3/4;max-height:78vh;border-radius:24px;overflow:hidden;background:var(--soft);display:grid;place-items:center;touch-action:none}
+.tr-stage canvas{display:block;width:100%!important;height:100%!important}
+.tr-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.tr-hint{font-size:.82rem;opacity:.7;text-align:center;margin:0}
+.tr-fallback{padding:24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center}
+.tr-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+.tr-card{background:#fff;border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.tr-card select,.tr-row select{width:100%;min-height:44px;padding:8px 12px;border:1px solid rgba(0,0,0,.2);border-radius:12px;background:#fff;font:inherit}
+.tr-row{display:grid;grid-template-columns:84px 1fr;gap:10px;align-items:center}
+.tr-row label{font-size:.85rem;opacity:.75}
+.tr-slot{border-top:1px solid rgba(0,0,0,.08);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.tr-slot:first-of-type{border-top:0;padding-top:0}
+.tr-slot-h{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tr-sw{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tr-dot{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25);padding:0;cursor:pointer;transition:transform .2s}
+.tr-dot:hover{transform:scale(1.12)}
+.tr-dot[aria-pressed="true"]{box-shadow:0 0 0 2px var(--accent)}
+.tr-sw input[type=color]{width:34px;height:34px;padding:0;border:0;background:none;border-radius:50%;cursor:pointer}
+.tr-check{display:flex;align-items:center;gap:8px;font-size:.9rem}
+@media(max-width:820px){.tr-grid{grid-template-columns:1fr}.tr-stage-wrap{position:static}.tr-stage{max-height:62vh}}
