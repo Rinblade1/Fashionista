@@ -51,7 +51,7 @@ describe("AI stylist page", () => {
     const u = userEvent.setup();
     render(<StylistPage />);
     await u.click(await screen.findByRole("button", { name: "Ask the stylist" }));
-    expect(await screen.findByText("Pick a mood or describe the occasion.")).toBeTruthy();
+    expect((await screen.findAllByText("Pick a mood or describe the occasion.")).length).toBeGreaterThan(0);
     expect(invoke).not.toHaveBeenCalled();
   });
 

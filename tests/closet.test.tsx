@@ -72,7 +72,9 @@ describe("Closet page", () => {
     expect(screen.getByRole("heading", { name: "Denim jacket" })).toBeTruthy();
     await u.click(screen.getByRole("button", { name: "Outerwear" }));
     expect(screen.queryByRole("heading", { name: "Silk slip dress" })).toBeNull();
-    await u.click(screen.getByRole("button", { name: "All" }));
+    // "All" also exists in the Her / Him / All section switch, so pick the category filter's button.
+    const allCategory = screen.getAllByRole("button", { name: "All" }).find((b) => !b.closest('[aria-label="Choose your section"]'))!;
+    await u.click(allCategory);
     await u.type(screen.getByLabelText("Search your closet"), "zara");
     expect(screen.queryByRole("heading", { name: "Denim jacket" })).toBeNull();
     expect(screen.getByRole("heading", { name: "Silk slip dress" })).toBeTruthy();

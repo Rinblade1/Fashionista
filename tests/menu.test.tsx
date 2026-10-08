@@ -18,7 +18,7 @@ describe("Sliding menu", () => {
     expect(screen.queryByRole("dialog")).toBeNull();
     await u.click(screen.getByRole("button", { name: "Menu" }));
     const dialog = await screen.findByRole("dialog", { name: "Menu" });
-    for (const name of ["Closet", "Outfits", "Planner", "AI stylist", "Profile"]) expect(screen.getByRole("link", { name })).toBeTruthy();
+    for (const name of ["Closet", "Outfits", "Planner", "AI stylist", "3D try-on", "Profile"]) expect(screen.getByRole("link", { name })).toBeTruthy();
     expect(screen.getByRole("link", { name: "Closet" }).getAttribute("aria-current")).toBe("page");
     expect(dialog.getAttribute("aria-modal")).toBe("true");
   });
